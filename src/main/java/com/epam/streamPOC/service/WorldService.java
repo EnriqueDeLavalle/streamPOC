@@ -7,16 +7,18 @@ import com.epam.streamPOC.domain.Country;
 
 public interface WorldService {
 
-	List<City> highestPopulatedByCountry();
+	List<City> highestPopulatedByCountry() throws Exception;
 
-	List<City> highestPopulatedByContinent();
+	List<City> highestPopulatedByContinent() throws Exception;
 
-	List<City> highestPopulatedCap();
+	City highestPopulatedCapitalCity() throws Exception;
 
-	List<City> highestPopulatedCapByContinent();
-	
-	List<Country> countriesByCityNumberDesc(); 
-	
-	List<Country> countriesByPopulationDesc();
+	List<City> highestPopulatedCapByContinent() throws Exception;
+
+	List<Country> countriesByCityNumberDesc() throws Exception;
+
+	List<Country> countriesByPopulationDesc() throws Exception;
+
+	String test() throws Exception;
 
 }

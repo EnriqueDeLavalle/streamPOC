@@ -5,12 +5,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.stream.Collectors;
 
+import com.epam.streamPOC.domain.CriteriaBean;
 import com.epam.streamPOC.domain.Director;
 import com.epam.streamPOC.domain.Genre;
 import com.epam.streamPOC.domain.Movie;
-import com.epam.streamPOC.domain.CriteriaBean;
 
 /**
  * @author Binnur Kurt (binnur.kurt@gmail.com)

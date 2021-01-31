@@ -16,44 +16,75 @@ import com.epam.streamPOC.service.impl.WorldServiceImpl;
 @RestController
 @RequestMapping("/world")
 public class WorldController {
-	
+
 	@Autowired
 	private WorldServiceImpl worldService;
 
-
 	@GetMapping("/test")
 	public ResponseEntity<String> getTest() {
-		return new ResponseEntity<>("OK: " , HttpStatus.OK);
+		return new ResponseEntity<>("OK: ", HttpStatus.OK);
 	}
 
-	@GetMapping("/highestPopulated1")
+	@GetMapping("/city/highestPopulatedByCountry")
 	public ResponseEntity<List<City>> highestPopulatedByCountry() {
-		return new ResponseEntity<>(worldService.highestPopulatedByCountry(), HttpStatus.OK);
+
+		try {
+			List<City> response = worldService.highestPopulatedByCountry();
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
 	}
 
-	@GetMapping("/highestPopulated2")
+	@GetMapping("/city/highestPopulatedByContinent")
 	public ResponseEntity<List<City>> highestPopulatedByContinent() {
-		return new ResponseEntity<>(worldService.highestPopulatedByContinent(), HttpStatus.OK);
+		try {
+			List<City> response = worldService.highestPopulatedByContinent();
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 
-	@GetMapping("/highestPopulated3")
-	public ResponseEntity<List<City>> highestPopulatedCap() {
-		return new ResponseEntity<>(worldService.highestPopulatedCap(), HttpStatus.OK);
+	@GetMapping("/city/highestPopulatedCapitalCity")
+	public ResponseEntity<City> highestPopulatedCap() {
+		try {
+			City response = worldService.highestPopulatedCapitalCity();
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 
-	@GetMapping("/highestPopulated4")
+	@GetMapping("/city/highestPopulatedCapByContinent")
 	public ResponseEntity<List<City>> highestPopulatedCapByContinent() {
-		return new ResponseEntity<>(worldService.highestPopulatedCapByContinent(), HttpStatus.OK);
+		try {
+			List<City> response = worldService.highestPopulatedCapByContinent();
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 
-	@GetMapping("/countriesByCity")
+	@GetMapping("/country/countriesByCityNumberDesc")
 	public ResponseEntity<List<Country>> countriesByCityNumberDesc() {
-		return new ResponseEntity<>(worldService.countriesByCityNumberDesc(), HttpStatus.OK);
+		try {
+			List<Country> response = worldService.countriesByCityNumberDesc();
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 
-	@GetMapping("/countriesByPop")
+	@GetMapping("/country/countriesByPopulationDesc")
 	public ResponseEntity<List<Country>> countriesByPopulationDesc() {
-		return new ResponseEntity<>(worldService.countriesByPopulationDesc(), HttpStatus.OK);
+		try {
+			List<Country> response = worldService.countriesByPopulationDesc();
+			return new ResponseEntity<>(response, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 
 }

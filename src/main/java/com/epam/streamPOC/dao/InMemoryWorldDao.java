@@ -3896,7 +3896,6 @@ public class InMemoryWorldDao implements WorldDao {
 		cities.put(3491, new City(3491, "Szâ€škesfehâ€šrvÂ r", "HUN", 105119));
 		cities.put(3492, new City(3492, "Montevideo", "URY", 1236000));
 		cities.put(3493, new City(3493, "Noumâ€ša", "NCL", 76293));
-		cities.put(3494, new City(3494, "Auckland", "NZL", 381800));
 		cities.put(3495, new City(3495, "Christchurch", "NZL", 324200));
 		cities.put(3496, new City(3496, "Manukau", "NZL", 281800));
 		cities.put(3497, new City(3497, "North Shore", "NZL", 187700));
@@ -3905,6 +3904,7 @@ public class InMemoryWorldDao implements WorldDao {
 		cities.put(3500, new City(3500, "Dunedin", "NZL", 119600));
 		cities.put(3501, new City(3501, "Hamilton", "NZL", 117100));
 		cities.put(3502, new City(3502, "Lower Hutt", "NZL", 98100));
+		cities.put(3494, new City(3494, "Auckland", "NZL", 381800));
 		cities.put(3503, new City(3503, "Toskent", "UZB", 2117500));
 		cities.put(3504, new City(3504, "Namangan", "UZB", 370500));
 		cities.put(3505, new City(3505, "Samarkand", "UZB", 361800));
