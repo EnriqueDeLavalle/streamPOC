@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.epam.streamPOC.domain.City;
 import com.epam.streamPOC.domain.Country;
-import com.epam.streamPOC.service.impl.WorldServiceImpl;
+import com.epam.streamPOC.service.WorldService;
 
 @RestController
 @RequestMapping("/world")
 public class WorldController {
 
 	@Autowired
-	private WorldServiceImpl worldService;
+	private WorldService worldService;
 
 	@GetMapping("/test")
 	public ResponseEntity<String> getTest() {

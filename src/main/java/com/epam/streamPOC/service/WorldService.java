@@ -19,6 +19,4 @@ public interface WorldService {
 
 	List<Country> countriesByPopulationDesc() throws Exception;
 
-	String test() throws Exception;
-
 }

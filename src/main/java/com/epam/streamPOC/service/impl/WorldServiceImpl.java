@@ -3,6 +3,7 @@ package com.epam.streamPOC.service.impl;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -23,6 +24,9 @@ public class WorldServiceImpl implements WorldService {
 	private Predicate<City> isCapital = city -> worldData.findAllCountries().stream()
 			.filter(c -> c.getCapital() == city.getId()).findFirst().isPresent();
 
+	private Function<City, String> getCountryContinent = city -> worldData.findCountryByCode(city.getCountryCode())
+			.getContinent();
+
 	@Override
 	public List<City> highestPopulatedByCountry() throws Exception {
 		return worldData.findAllCities().stream()
@@ -34,7 +38,7 @@ public class WorldServiceImpl implements WorldService {
 	@Override
 	public List<City> highestPopulatedByContinent() throws Exception {
 		return worldData.findAllCities().stream()
-				.collect(Collectors.groupingBy(c -> getCountryContinent(c.getCountryCode()),
+				.collect(Collectors.groupingBy(getCountryContinent,
 						Collectors.maxBy(Comparator.comparingInt(City::getPopulation))))
 				.values().stream().map(Optional::get).collect(Collectors.toList());
 	}
@@ -48,7 +52,7 @@ public class WorldServiceImpl implements WorldService {
 	@Override
 	public List<City> highestPopulatedCapByContinent() throws Exception {
 		return worldData.findAllCities().stream().filter(c -> isCapital.test(c))
-				.collect(Collectors.groupingBy(c -> getCountryContinent(c.getCountryCode()),
+				.collect(Collectors.groupingBy(getCountryContinent,
 						Collectors.maxBy(Comparator.comparingInt(City::getPopulation))))
 				.values().stream().map(Optional::get).collect(Collectors.toList());
 	}
@@ -65,16 +69,6 @@ public class WorldServiceImpl implements WorldService {
 		return worldData.findAllCountries().stream().filter(c -> c.getPopulation() > 0)
 				.sorted((c1, c2) -> Integer.compare(c2.getPopulation(), c1.getPopulation()))
 				.collect(Collectors.toList());
-	}
-
-	private String getCountryContinent(String countryCode) {
-		return worldData.findCountryByCode(countryCode).getContinent();
-	}
-
-	@Override
-	public String test() throws Exception {
-
-		return "OK";
 	}
 
 }

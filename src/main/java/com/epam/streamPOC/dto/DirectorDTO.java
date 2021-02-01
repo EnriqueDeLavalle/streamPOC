@@ -5,14 +5,14 @@ public class DirectorDTO {
 	private int id;
 	private String name;
 	private String imdb;
-	private int numberMovies;
-	private int numberGenres;
+	private long numberMovies;
+	private long numberGenres;
 	
 	public DirectorDTO() {
 		super();
 	}
 
-	public DirectorDTO(int id, String name, String imdb, int numberMovies, int numberGenres) {
+	public DirectorDTO(int id, String name, String imdb, long numberMovies, long numberGenres) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -45,19 +45,19 @@ public class DirectorDTO {
 		this.imdb = imdb;
 	}
 
-	public int getNumberMovies() {
+	public long getNumberMovies() {
 		return numberMovies;
 	}
 
-	public void setNumberMovies(int numberMovies) {
+	public void setNumberMovies(long numberMovies) {
 		this.numberMovies = numberMovies;
 	}
 
-	public int getNumberGenres() {
+	public long getNumberGenres() {
 		return numberGenres;
 	}
 
-	public void setNumberGenres(int numberGenres) {
+	public void setNumberGenres(long numberGenres) {
 		this.numberGenres = numberGenres;
 	}
 	
