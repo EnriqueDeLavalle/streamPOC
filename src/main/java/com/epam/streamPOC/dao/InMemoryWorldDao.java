@@ -29,7 +29,7 @@ public class InMemoryWorldDao implements WorldDao {
 		}
 		return instance;
 	}
-	
+
 	private InMemoryWorldDao() {
 		countries = new ConcurrentHashMap<>();
 		cities = new ConcurrentHashMap<>();
@@ -129,7 +129,7 @@ public class InMemoryWorldDao implements WorldDao {
 	public List<City> findCitiesByCountryCode(String countryCode) {
 		return findCountryByCode(countryCode).getCities();
 	}
-	
+
 	public void createCountries() {
 		countries.put("ABW", new Country("ABW", "Aruba", "North America", 103000, 193.00, 828.00, 129));
 		countries.put("AFG", new Country("AFG", "Afghanistan", "Asia", 22720000, 652090.00, 5976.00, 1));
@@ -385,9 +385,6 @@ public class InMemoryWorldDao implements WorldDao {
 		countries.put("ZMB", new Country("ZMB", "Zambia", "Africa", 9169000, 752618.00, 3377.00, 3162));
 		countries.put("ZWE", new Country("ZWE", "Zimbabwe", "Africa", 11669000, 390757.00, 5951.00, 4068));
 	}
-
-
-
 
 	public void createCities1() {
 		cities.put(1, new City(1, "Kabul", "AFG", 1780000));

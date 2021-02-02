@@ -3,10 +3,10 @@ package com.epam.streamPOC.dao;
 import java.util.Collection;
 import java.util.List;
 
+import com.epam.streamPOC.domain.CriteriaBean;
 import com.epam.streamPOC.domain.Director;
 import com.epam.streamPOC.domain.Genre;
 import com.epam.streamPOC.domain.Movie;
-import com.epam.streamPOC.domain.CriteriaBean;
 
 /**
  *
@@ -21,14 +21,13 @@ public interface MovieDao {
 
 	Collection<Movie> findAllMoviesByDirectorId(int directorId);
 
-	Collection<Movie> findAllMoviesByYearRangeAndGenre(String genre,
-                                                       int fromYear, int toYear);
+	Collection<Movie> findAllMoviesByYearRangeAndGenre(String genre, int fromYear, int toYear);
 
 	Collection<Movie> findAllMoviesByGenre(String genre);
+
 	Collection<Movie> findAllMoviesByCriteria(CriteriaBean criteria);
 
-	Movie addMovie(int id, String title, int year, String imdb,
-                   List<Genre> genres, List<Director> directors);
+	Movie addMovie(int id, String title, int year, String imdb, List<Genre> genres, List<Director> directors);
 
 	Genre findGenreByName(String genre);
 

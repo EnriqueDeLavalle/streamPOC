@@ -17,16 +17,16 @@ public class BeansConfig {
 	public InMemoryWorldDao getWorldData() {
 		return InMemoryWorldDao.getInstance();
 	}
-	
+
 	@Bean
 	@Scope("singleton")
 	public MovieDao getMovieData() {
 		return InMemoryMovieDao.getInstance();
 	}
-	
+
 	@Bean
 	public ModelMapper modelMapper() {
-	    return new ModelMapper();
+		return new ModelMapper();
 	}
 
 }

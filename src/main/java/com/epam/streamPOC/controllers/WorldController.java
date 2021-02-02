@@ -20,11 +20,6 @@ public class WorldController {
 	@Autowired
 	private WorldService worldService;
 
-	@GetMapping("/test")
-	public ResponseEntity<String> getTest() {
-		return new ResponseEntity<>("OK: ", HttpStatus.OK);
-	}
-
 	@GetMapping("/city/highestPopulatedByCountry")
 	public ResponseEntity<List<City>> highestPopulatedByCountry() {
 

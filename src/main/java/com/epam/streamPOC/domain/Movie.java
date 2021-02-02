@@ -15,7 +15,7 @@ public class Movie {
 	private List<Genre> genres;
 	private List<Director> directors;
 
-	//region constructor, setters/getters, hashCode, equals, and toString
+	// region constructor, setters/getters, hashCode, equals, and toString
 	{
 		genres = new ArrayList<>();
 		directors = new ArrayList<>();
@@ -103,8 +103,7 @@ public class Movie {
 
 	@Override
 	public String toString() {
-		return "Movie [title=" + title + ", year=" + year
-				 + "]";
+		return "Movie [title=" + title + ", year=" + year + "]";
 	}
-	//endregion
+	// endregion
 }

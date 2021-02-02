@@ -25,8 +25,8 @@ public class SwaggerConfig {
 
 	private ApiInfo apiDetails() {
 		return new ApiInfo("Movie - World API",
-				"POC for Java Stream API - Queries over Cities, Countries, movies and director over in memory data", "1.0",
-				"Free to use",
+				"POC for Java Stream API - Queries over Cities, Countries, movies and director over in memory data",
+				"1.0", "Free to use",
 				new springfox.documentation.service.Contact("Enrique De Lavalle", "enrique_de_lavalle@epam.com",
 						"enrique_de_lavalle@epam.com"),
 				"API License", "enrique_de_lavalle@epam.com", Collections.emptyList());

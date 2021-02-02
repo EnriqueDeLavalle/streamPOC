@@ -65,7 +65,7 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	private long numberDirMovies(DirectorDTO director) {
-		return  movieDao.findAllMovies().stream().filter(m -> isDirector.test(m, director)).count();
+		return movieDao.findAllMovies().stream().filter(m -> isDirector.test(m, director)).count();
 	}
 
 	private long numberDirGenres(DirectorDTO director) {
